@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dayana's Balloons and Decoration</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a style="margin-left: 0px;" href="#home" class="w3-bar-item w3-button">Dayana's Balloons and Decoration</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#menu" class="w3-bar-item w3-button">Price</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px;" id="home">
+  <img style="padding-left: 50px; padding-right: 50px;" class="w3-image" src="https://cdn.shopify.com/s/files/1/0003/9383/8645/products/img-8_26418639-9a25-40cd-b1d0-f9919b171e81_1946x.jpg?v=1621971996" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 style="padding-left: 35px;" class="w3-xxlarge">Dayana's Balloons and Decoration</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="https://m.media-amazon.com/images/I/71TU3t7mdHL._AC_SL1200_.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Us</h1><br>
+      <p  class="w3-large w3-text-grey w3-hide-medium">Dayana's Balloons and Decoration takes care of the decorations for your birthday party, graduation, wedding, wedding anniversary and more. We will make your party unforgettable.</p>
+      <p  class="w3-large w3-text-grey w3-hide-medium">We specialize in:</p>
+      <ul class="w3-large w3-text-grey w3-hide-medium">
+        
+        <li class="w3-large w3-text-grey w3-hide-medium">Balloon Garland/Arches.</li>
+        <li class="w3-large w3-text-grey w3-hide-medium">Balloons Bouquet.</li>
+        <li class="w3-large w3-text-grey w3-hide-medium">Party Gift Bags.</li>
+        <li class="w3-large w3-text-grey w3-hide-medium">Party Snacks.</li>
+        <li class="w3-large w3-text-grey w3-hide-medium">Decorations.</li>
+        <li class="w3-large w3-text-grey w3-hide-medium">Cakes.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Our Price</h1><br>
+      <h4>Balloons Garland/Arches</h4>
+      <p class="w3-text-grey">Please contact us for an estimate</p><br>
+    
+      <h4>Balloons Bouquet</h4>
+      <p class="w3-text-grey">Please contact us for an estimate</p><br>
+    
+      <h4>Cakes</h4>
+      <p class="w3-text-grey">Please contact us for an estimate</p><br> 
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="https://globosworld.com/wp-content/uploads/2021/04/BIG-FLOWERS-BALLOON-BOUQUET.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1><br>
+    <p>We offer full-service decorations for any event, large or small. We understand your needs and we will satisfy both look and taste. Do not hesitate to contact us.</p>
+    <p class="w3-text-blue-grey w3-large"><b>Dayana's Balloons and Decoration, Orlando - Saratota FL</b></p>
+    <p>You can also contact us by phone +1 813-507-6098 / +1 941-557-9594</p>
+    <p>Or email decoration.dayanas@gmail.com, or you can send us a message here:</p>
+    <form action="{% url 'send-email' %}" method="POST">
+        {% csrf_token %}
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="Phone Number" required name="Phone-Number"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Created by <a href="https://santiagonessy.herokuapp.com" title="Santiago Nessy" class="w3-hover-text-green">Santiago Nessy</a></p>
+</footer>
+
+</body>
+</html>
+
